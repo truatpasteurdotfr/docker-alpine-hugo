@@ -3,7 +3,7 @@ MAINTAINER Tru Huynh <tru@pasteur.fr>
 
 # build env
 RUN apk update && apk upgrade && \
-	apk add --no-cache  libgcc libstdc++
+	apk add --no-cache  libgcc libstdc++ && \
 	git clone https://github.com/gohugoio/hugo.git && \
 	cd hugo && go install --tags extended
 
