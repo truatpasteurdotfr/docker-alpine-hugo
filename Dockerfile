@@ -6,7 +6,8 @@ RUN apk update && apk upgrade && \
 	apk add --no-cache git go g++ && \
 	apk info -v > /apk-info-v-builder.txt && \
 	git clone https://github.com/gohugoio/hugo.git && \
-	cd hugo && go install --tags extended
+	cd hugo && go install --tags extended && \
+	strip /root/go/bin/hugo
 
 # copy hugo to runtime
 FROM alpine
